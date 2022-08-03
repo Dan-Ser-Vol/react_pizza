@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: gray;
+}
+
+.container {
+    width: 1200px;
+}
+
+.logo{
+    width: 150px;
+}

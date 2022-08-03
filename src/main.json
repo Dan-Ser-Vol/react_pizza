@@ -1,0 +1,35 @@
+ [
+  {
+   " id": 0,
+    "imageUrl":
+      "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "title": "Паперонни",
+    "types": [0, 1, 2],
+    "sizes": [26, 30, 40],
+    "price": 204,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 1,
+    "imageUrl":
+      "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "title": "Паперонни xl",
+    "types": [0, 1, 2],
+    "sizes": [126, 230, 340],
+    "price": 708,
+    "category": 2,
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "imageUrl":
+      "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+    "title": "Паперонни sl",
+    "types": [0, 1, 2],
+    "sizes": [226, 330, 540],
+    "price": 903,
+    "category": 15,
+    "rating": 2
+  }
+]

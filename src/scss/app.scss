@@ -1,8 +1,7 @@
+@import "variables";
+@import "libs/normalize";
 
-@import 'variables';
-@import 'libs/normalize';
-
-@import 'components/all';
+@import "components/all";
 
 body {
   background-color: $background;
@@ -34,6 +33,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 1260px) {
+      flex-direction: column-reverse;
+      .categories {
+        margin-top: 30px;
+        width: 100%;
+        overflow: scroll;
+        ul {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -55,6 +65,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
   }
 
   .content__title {
@@ -107,11 +118,23 @@ body {
   }
 
   &__item {
-    display: flex;
-    width: 100%;
-    border-top: 1px solid $gray-line;
-    padding-top: 30px;
-    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 1px;
+
+    @media (max-width: 1400px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 1060px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 760px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     &-img {
       display: flex;
@@ -128,8 +151,7 @@ body {
     &-info {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      width: 40%;
+      justify-content: space-around;
 
       h3 {
         font-weight: bold;
@@ -148,7 +170,6 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 13%;
 
       &-minus {
         svg {
@@ -167,7 +188,6 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 33%;
 
       b {
         font-weight: bold;
@@ -179,8 +199,7 @@ body {
     &-remove {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      width: 4%;
+      justify-content: center;
 
       .button {
         border-color: darken($color: $gray-line, $amount: 10);
