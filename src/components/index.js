@@ -6,5 +6,16 @@ import Skeleton from "./Skeleton";
 import NotFoundBlock from "./NotFoundBlock";
 import Search from "./Search"
 import Pagination from "./Pagination";
+import CartItem from "./CartItem";
 
-export {Pagination, Header, Categories, Sort, PizzaBlock, Skeleton, NotFoundBlock, Search };
+export {
+  CartItem,
+  Pagination,
+  Header,
+  Categories,
+  Sort,
+  PizzaBlock,
+  Skeleton,
+  NotFoundBlock,
+  Search,
+};
