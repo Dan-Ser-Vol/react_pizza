@@ -18,7 +18,7 @@ const addedCout = cartItem? cartItem.count: 0
       price,
       imageUrl,
       type: typesName[activeType],
-      size: activeSize,
+      size: sizes[activeSize],
     };
     console.log(item);
     dispatch(addItem(item));

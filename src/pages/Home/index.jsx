@@ -39,23 +39,26 @@ const Home = () => {
     }
   }, []);
 
-  const fetchPizzas = () => {
+  const fetchPizzas = async () => {
     setIsLoading(true);
     const sortBy = sort.sortProperty.replace("-", "");
     const order = sort.sortProperty.includes("-") ? "asc" : "desc";
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const search = searchValue ? `&search=${searchValue}` : "";
-
-    axios
-      .get(
+    try {
+      const res = await axios.get(
         `https://60e150d95a5596001730f084.mockapi.io/pizzas?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`
-      )
-      .then(({ data }) => {
-        setPizzas(data);
-        setIsLoading(false);
-      });
+      );
+      setPizzas(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+
     window.scrollTo(0, 0);
   };
+
   React.useEffect(() => {
     if (isMounted.current) {
       const queryString = qs.stringify({
@@ -65,7 +68,7 @@ const Home = () => {
       });
       navigate(`?${queryString}`);
     }
-    isMounted.current = true
+    isMounted.current = true;
   }, [categoryId, sort, currentPage]);
 
   React.useEffect(() => {
